@@ -1,0 +1,28 @@
+/* src/index.css */
+@import "tailwindcss";
+
+/* THIS LINE IS THE FIX FOR TAILWIND v4 */
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #0f172a;
+  }
+
+  .dark {
+    --background: #000000;
+    --foreground: #f8fafc;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply transition-colors duration-500;
+  }
+}
+
+@theme {
+  --color-primary: #7B2CBF;
+  --color-black: #000000;
+}
